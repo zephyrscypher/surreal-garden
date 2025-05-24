@@ -2,34 +2,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Surreal Garden</title>
-  <style>
-    body {
-      margin: 0;
-      background: black;
-      color: white;
-      font-family: 'Georgia', serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .loading-message {
-      text-align: center;
-      font-size: 1.5rem;
-      opacity: 0;
-      animation: fadeIn 4s ease-in-out forwards;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Surreal Garden</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: black; }
+        canvas { display: block; }
+        #loading {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            background: black;
+            z-index: 10;
+            animation: fadeOut 3s ease forwards;
+            animation-delay: 3s;
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+    </style>
 </head>
 <body>
-  <div class="loading-message">
-    You are entering the overgrown heart of forgotten futures…<br>
-    Where relics bloom, and every breath carries a memory.
-  </div>
+    <div id="loading">You are entering the overgrown heart of forgotten futures…<br>Where relics bloom, and every breath carries a memory.</div>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
